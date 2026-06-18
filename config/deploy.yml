@@ -1,0 +1,57 @@
+# Name of your application. Used to uniquely configure containers.
+service: talk_to_the_hand
+
+# Name of the container image.
+# For GitHub Container Registry (ghcr.io) the image is "<github-username-or-org>/<repo>".
+image: hharen/talk_to_the_hand
+
+# Deploy to these servers.
+servers:
+  web:
+    - 91.98.171.114
+
+# Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
+# Remove this section when using multiple web servers and ensure you terminate SSL at your load balancer.
+#
+# Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
+proxy:
+  ssl: true
+  host: talk-to-the-hand.hharen.com
+  # The app container listens on port 80 (Thruster). This is the default, shown for clarity.
+  app_port: 80
+
+# Credentials for your image host.
+registry:
+  # Specify the registry server, if you're not using Docker Hub
+  server: ghcr.io
+  username: hharen
+
+  # Always use an access token rather than real password when possible.
+  # For ghcr.io this is a GitHub Personal Access Token with write:packages scope (pulled from .kamal/secrets).
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Configure builder setup.
+builder:
+  # Most cloud servers are amd64/x86_64. Change to arm64 if your server is ARM.
+  arch: amd64
+
+# Inject ENV variables into containers (secrets come from .kamal/secrets).
+# RAILS_MASTER_KEY decrypts config/credentials.yml.enc at boot.
+env:
+  secret:
+    - RAILS_MASTER_KEY
+
+# Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
+# "bin/kamal app logs -r job" will tail logs from the first server in the job section.
+#
+# aliases:
+#   shell: app exec --interactive --reuse "bash"
+
+# Use a different ssh user than root
+#
+# ssh:
+#   user: app
+
+# This application has no database and no file uploads, so no persistent
+# volumes or accessory services are required.

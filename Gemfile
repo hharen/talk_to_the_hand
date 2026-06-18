@@ -39,6 +39,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
+  gem "kamal", require: false
 end
 
 group :development do
