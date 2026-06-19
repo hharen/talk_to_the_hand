@@ -15,9 +15,9 @@ communicate windspeeds from 1 to 99. No accounts, no scores — just practice.
 Numbers are shown with the **back of the hand** as a *tens* gesture followed by
 a *ones* gesture (single digits and exact tens use just one gesture).
 
-- **Tens:** 10–40 = 1–4 fingers pointing down; 50 = fist (no thumb); 60–90 =
-  1–4 fingers pointing sideways.
-- **Ones:** 1–4 = fingers up; 6–9 = fingers down; 5 = thumb up.
+- **Tens:** 10-40 = 1-4 fingers pointing down; 50 = fist (no thumb); 60-90 =
+  1-4 fingers pointing sideways.
+- **Ones:** 1-4 = fingers up; 6-9 = fingers down; 5 = thumb up.
 - **55/65/75/85/95:** a single combined gesture — fingers to the side with the
   thumb up.
 

@@ -106,14 +106,14 @@ module HandSignsHelper
     rotation = 0
 
     if thumb
-      # Horizontal hand + thumb up: ones "5" (0 fingers) and combined 55–95.
+      # Horizontal hand + thumb up: ones "5" (0 fingers) and combined 55-95.
       FINGERS.each_with_index do |(bx, by, len, w), i|
         i < fingers ? extended << [bx, by, len, w] : bumps << [bx, by, w]
       end
       thumb_spec = [86, 166, 44, 19, -90] # points left -> up after the 90° turn
       rotation = 90
     elsif orientation == :fist
-      # 50: closed fist, no thumb, shown horizontally (like the 60–90 family).
+      # 50: closed fist, no thumb, shown horizontally (like the 60-90 family).
       FINGERS.each { |bx, by, _len, w| bumps << [bx, by, w] }
       rotation = 90
     else

@@ -28,7 +28,7 @@ function jointCosine(a, mid, b) {
 }
 
 function fingerExtended(lm, finger) {
-  // A straight finger has an almost straight line through MCP–PIP–TIP, so the
+  // A straight finger has an almost straight line through MCP-PIP-TIP, so the
   // angle at PIP is close to 180° (cosine close to -1). A curled finger bends.
   return jointCosine(lm[finger.mcp], lm[finger.pip], lm[finger.tip]) < -0.5
 }
@@ -43,7 +43,7 @@ function orientationOf(dx, dy) {
 function thumbPointingUp(lm) {
   const tip = lm[THUMB_TIP]
   const mcp = lm[THUMB_MCP]
-  // Straight thumb (MCP–IP–TIP roughly in line) pointing upward.
+  // Straight thumb (MCP-IP-TIP roughly in line) pointing upward.
   const extended = jointCosine(lm[THUMB_MCP], lm[3], lm[THUMB_TIP]) < -0.4
   const dx = tip.x - mcp.x
   const dy = tip.y - mcp.y
