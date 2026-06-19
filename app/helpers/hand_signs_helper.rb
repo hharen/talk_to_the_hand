@@ -40,11 +40,11 @@ module HandSignsHelper
   def ones_gesture(ones)
     case ones
     when 1..4
-      { place: :ones, value: ones, fingers: ones, orientation: :up, thumb: false }
+      { place: :ones, value: ones, fingers: ones, orientation: :down, thumb: false }
     when 5
       { place: :ones, value: 5, fingers: 0, orientation: :horizontal, thumb: true }
     when 6..9
-      { place: :ones, value: ones, fingers: ones - 5, orientation: :down, thumb: false }
+      { place: :ones, value: ones, fingers: ones - 5, orientation: :up, thumb: false }
     end
   end
 
