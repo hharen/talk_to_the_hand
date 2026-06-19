@@ -15,7 +15,7 @@
       <input data-recognize-game-target="input" data-action="input->recognize-game#inputChanged" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"
              class="w-28 rounded-xl border border-white/10 bg-neutral-950 px-4 py-2 text-2xl text-center tabular-nums text-neutral-100 placeholder:text-neutral-600 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/30"
              placeholder="?" autocomplete="off">
-      <button type="button" data-action="recognize-game#reveal"
+      <button type="button" data-recognize-game-target="actionButton" data-action="recognize-game#revealOrNext"
               class="rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-2 text-sm font-medium text-neutral-400 transition hover:bg-neutral-800">Reveal</button>
     </form>
 

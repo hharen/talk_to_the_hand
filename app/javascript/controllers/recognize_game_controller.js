@@ -5,7 +5,7 @@ import { numberToGestures } from "lib/number_codec"
 // hidden templates) and the user types the number they represent.
 export default class extends Controller {
   static targets = [
-    "prompt", "input", "feedback", "panel", "templates",
+    "prompt", "input", "feedback", "panel", "templates", "actionButton",
   ]
 
   connect() {
@@ -60,6 +60,8 @@ export default class extends Controller {
     this.inputTarget.disabled = false
     this.feedbackTarget.textContent = ""
     this.feedbackTarget.className = "text-lg font-medium min-h-7"
+    this.revealed = false
+    this.actionButtonTarget.textContent = "Reveal"
     this.inputTarget.focus()
   }
 
@@ -102,13 +104,25 @@ export default class extends Controller {
     }
   }
 
+  revealOrNext() {
+    if (!this.running) return
+    if (this.revealed) {
+      this.newRound()
+    } else {
+      this.reveal()
+    }
+  }
+
   reveal() {
     if (!this.running) return
+    if (this.checkTimer) {
+      clearTimeout(this.checkTimer)
+      this.checkTimer = null
+    }
     this.feedbackTarget.textContent = `It was ${this.target}.`
     this.feedbackTarget.className = "text-lg font-medium min-h-7 text-neutral-400"
     this.inputTarget.disabled = true
-    setTimeout(() => {
-      if (this.running) this.newRound()
-    }, 1400)
+    this.revealed = true
+    this.actionButtonTarget.textContent = "Next"
   }
 }

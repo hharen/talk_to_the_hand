@@ -24,13 +24,13 @@ export function tensGesture(tens) {
 
 export function onesGesture(ones) {
   if (ones >= 1 && ones <= 4) {
-    return { place: "ones", value: ones, fingers: ones, orientation: "up", thumb: false }
+    return { place: "ones", value: ones, fingers: ones, orientation: "down", thumb: false }
   }
   if (ones === 5) {
     return { place: "ones", value: 5, fingers: 0, orientation: "horizontal", thumb: true }
   }
   if (ones >= 6 && ones <= 9) {
-    return { place: "ones", value: ones, fingers: ones - 5, orientation: "down", thumb: false }
+    return { place: "ones", value: ones, fingers: ones - 5, orientation: "up", thumb: false }
   }
   return null
 }
@@ -74,8 +74,8 @@ export function gestureToValue(raw, place) {
 
   // ones
   if (thumb && fingers === 0) return 5
-  if (orientation === "up" && fingers >= 1 && fingers <= 4) return fingers
-  if (orientation === "down" && fingers >= 1 && fingers <= 4) return fingers + 5
+  if (orientation === "down" && fingers >= 1 && fingers <= 4) return fingers
+  if (orientation === "up" && fingers >= 1 && fingers <= 4) return fingers + 5
   return null
 }
 

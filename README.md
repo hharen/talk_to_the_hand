@@ -17,7 +17,7 @@ a *ones* gesture (single digits and exact tens use just one gesture).
 
 - **Tens:** 10-40 = 1-4 fingers pointing down; 50 = fist (no thumb); 60-90 =
   1-4 fingers pointing sideways.
-- **Ones:** 1-4 = fingers up; 6-9 = fingers down; 5 = thumb up.
+- **Ones:** 1-4 = fingers down; 6-9 = fingers up; 5 = thumb up.
 - **55/65/75/85/95:** a single combined gesture — fingers to the side with the
   thumb up.
 
