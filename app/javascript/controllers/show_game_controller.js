@@ -10,6 +10,7 @@ export default class extends Controller {
   static targets = [
     "video", "prompt", "step", "feedback", "live",
     "startButton", "stopButton", "captured", "status",
+    "solution", "solutionButton", "skipButton",
   ]
 
   static values = { holdMs: { type: Number, default: 800 } }
@@ -106,6 +107,9 @@ export default class extends Controller {
     if (this.hasLiveTarget) this.liveTarget.textContent = "—"
     this.promptTarget.textContent = "Press Start"
     this.promptTarget.className = "mt-2 text-2xl font-medium text-neutral-500"
+    this.solutionTarget.classList.add("hidden")
+    this.solutionButtonTarget.classList.add("hidden")
+    this.skipButtonTarget.classList.add("hidden")
   }
 
   newRound() {
@@ -118,8 +122,23 @@ export default class extends Controller {
     this.promptTarget.className = "mt-2 text-7xl font-semibold tabular-nums text-neutral-50"
     this.feedbackTarget.textContent = ""
     this.feedbackTarget.className = "mt-5 text-lg font-medium min-h-7"
+    this.solutionTarget.textContent = ""
+    this.solutionTarget.classList.add("hidden")
+    this.solutionButtonTarget.classList.remove("hidden")
+    this.skipButtonTarget.classList.remove("hidden")
     this.renderCaptured()
     this.updateStep()
+  }
+
+  showSolution() {
+    const parts = this.expected.map((g) => describeGesture({ fingers: g.fingers, orientation: g.orientation, thumb: g.thumb }))
+    this.solutionTarget.textContent = `Solution: ${parts.join(" → ")}`
+    this.solutionTarget.classList.remove("hidden")
+    this.solutionButtonTarget.classList.add("hidden")
+  }
+
+  skip() {
+    this.newRound()
   }
 
   updateStep() {
