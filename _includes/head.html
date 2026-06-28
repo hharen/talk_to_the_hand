@@ -1,0 +1,47 @@
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Talk to the Hand">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="{{ page.description | default: site.description }}">
+
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <script>
+      (function () {
+        try {
+          var s = JSON.parse(localStorage.getItem("handSkin"))
+          if (s && s.fill) {
+            var root = document.documentElement.style
+            root.setProperty("--hand-skin", s.fill)
+            root.setProperty("--hand-skin-stroke", s.stroke)
+          }
+        } catch (e) {}
+      })()
+    </script>
+
+    {%- comment %} Enable PWA manifest for installable apps {% endcomment -%}
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@hotwired/stimulus": "/assets/js/vendor/stimulus.js",
+          "@mediapipe/tasks-vision": "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs",
+          "controllers/hand_color_controller": "/assets/js/controllers/hand_color_controller.js",
+          "controllers/show_game_controller": "/assets/js/controllers/show_game_controller.js",
+          "controllers/recognize_game_controller": "/assets/js/controllers/recognize_game_controller.js",
+          "lib/number_codec": "/assets/js/lib/number_codec.js",
+          "lib/gesture_classifier": "/assets/js/lib/gesture_classifier.js"
+        }
+      }
+    </script>
+    <script type="module" src="/assets/js/application.js"></script>

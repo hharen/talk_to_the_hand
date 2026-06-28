@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body data-controller="hand-color" class="relative min-h-screen bg-neutral-950 text-neutral-300 antialiased selection:bg-sky-500/30">
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(60rem_40rem_at_50%_-10%,rgba(56,189,248,0.10),transparent)]"></div>
+    {% include header.html %}
+    <main class="container mx-auto mt-12 mb-24 px-5">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

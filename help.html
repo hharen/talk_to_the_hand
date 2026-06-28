@@ -1,0 +1,28 @@
+---
+layout: default
+title: Gesture help
+description: Learn how the indoor-skydiving hand gesture code works.
+permalink: /help/
+---
+
+<div class="max-w-3xl mx-auto">
+  <h1 class="text-2xl font-semibold tracking-tight text-neutral-100">How the gesture code works</h1>
+  <p class="mt-3 text-neutral-400 leading-relaxed">
+    Windspeeds 1-99 are signed with the <strong class="text-neutral-200 font-medium">back of the hand</strong> using up to two
+    gestures: a <em class="not-italic text-neutral-200">tens</em> gesture first, then a <em class="not-italic text-neutral-200">ones</em> gesture.
+  </p>
+
+  <ul class="mt-5 list-disc pl-5 text-sm text-neutral-400 space-y-1.5 marker:text-neutral-600">
+    <li>A single digit (1-9) uses the <strong class="text-neutral-200 font-medium">ones</strong> gesture only.</li>
+    <li>An exact ten (10, 20, … 90) uses the <strong class="text-neutral-200 font-medium">tens</strong> gesture only.</li>
+    <li>Anything else is the tens gesture, then the ones gesture.</li>
+    <li>The thumb is not used for counting — except for 5.</li>
+  </ul>
+
+  {% include legend.html %}
+
+  <div class="mt-12 flex gap-3">
+    <a href="/show" class="rounded-xl bg-sky-500 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-sky-400">Try Show mode</a>
+    <a href="/recognize" class="rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-2 text-sm font-medium text-neutral-300 transition hover:bg-neutral-800">Try Recognize mode</a>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Scan Jekyll templates and JS controllers so utility classes used in markup
+   and in dynamically-applied class strings are all generated. */
+@source "../*.html";
+@source "../_layouts/**/*.html";
+@source "../_includes/**/*.html";
+@source "../assets/js/**/*.js";

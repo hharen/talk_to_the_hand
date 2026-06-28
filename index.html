@@ -1,0 +1,73 @@
+---
+layout: default
+title: Talk to the Hand
+description: Practice the indoor skydiving hand code for windspeeds 1-99.
+permalink: /
+---
+
+<div class="max-w-3xl mx-auto">
+  <h1 class="text-4xl font-semibold tracking-tight text-neutral-100">Talk to the Hand 🤚</h1>
+  <p class="mt-4 text-neutral-400 leading-relaxed">
+    Practice the indoor skydiving hand code for windspeeds 1-99. Numbers are shown
+    with the <strong class="text-neutral-200 font-medium">back of the hand</strong>: a <em class="not-italic text-neutral-200">tens</em> gesture, then a
+    <em class="not-italic text-neutral-200">ones</em> gesture.
+  </p>
+
+  <div class="mt-10 grid gap-4 sm:grid-cols-2">
+    <a href="/show" class="group block rounded-2xl border border-white/10 bg-neutral-900/40 p-6 transition hover:border-sky-400/40 hover:bg-neutral-900/70">
+      <div class="text-2xl">🤚 → 📷</div>
+      <h2 class="mt-4 text-xl font-medium text-neutral-100">Show mode</h2>
+      <p class="mt-1 text-sm text-neutral-400">
+        The app gives you a number. Sign it to your camera and it checks your gesture.
+      </p>
+      <span class="mt-4 inline-block text-sm text-sky-400 opacity-0 transition group-hover:opacity-100">Start training →</span>
+    </a>
+
+    <a href="/recognize" class="group block rounded-2xl border border-white/10 bg-neutral-900/40 p-6 transition hover:border-sky-400/40 hover:bg-neutral-900/70">
+      <div class="text-2xl">👀 → ⌨️</div>
+      <h2 class="mt-4 text-xl font-medium text-neutral-100">Recognize mode</h2>
+      <p class="mt-1 text-sm text-neutral-400">
+        The app shows a gesture. Read it and type the number it represents.
+      </p>
+      <span class="mt-4 inline-block text-sm text-sky-400 opacity-0 transition group-hover:opacity-100">Start training →</span>
+    </a>
+  </div>
+
+  <section class="mt-4 rounded-2xl border border-white/10 bg-neutral-900/40 p-6">
+    <div class="flex items-center gap-5">
+      <div class="shrink-0 rounded-xl border border-white/10 bg-neutral-950/40 p-2">
+        {% hand_sign preview size:72 %}
+      </div>
+      <div class="flex-1">
+        <h2 class="text-sm font-medium text-neutral-200">Hand colour</h2>
+        <p class="mt-1 text-xs text-neutral-500">Pick a colour for the gesture hands. It’s remembered on this device.</p>
+        <div class="mt-3 space-y-6 rounded-2xl bg-neutral-950/40 p-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#ffe0bd" data-stroke="#d9a06b" aria-label="Skin tone 1" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #ffe0bd"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#f5cfa0" data-stroke="#c98f5e" aria-label="Skin tone 2" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #f5cfa0"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#e6b48c" data-stroke="#b07a52" data-default="true" aria-label="Skin tone 3" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #e6b48c"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#d99a6c" data-stroke="#a86a3c" aria-label="Skin tone 4" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #d99a6c"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#c5824e" data-stroke="#94552c" aria-label="Skin tone 5" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #c5824e"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#a96a3c" data-stroke="#7c4421" aria-label="Skin tone 6" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #a96a3c"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#8a5524" data-stroke="#623414" aria-label="Skin tone 7" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #8a5524"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#5c3a1e" data-stroke="#3d2410" aria-label="Skin tone 8" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #5c3a1e"></button>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#f5f5f5" data-stroke="#9ca3af" aria-label="Hand colour 1" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #f5f5f5"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#f5d042" data-stroke="#c2a012" aria-label="Hand colour 2" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #f5d042"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#f7951d" data-stroke="#b86a0e" aria-label="Hand colour 3" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #f7951d"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#3fbf6f" data-stroke="#268a4c" aria-label="Hand colour 4" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #3fbf6f"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#9b6cf7" data-stroke="#6b41b0" aria-label="Hand colour 5" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #9b6cf7"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#4f8ef7" data-stroke="#2c5fb0" aria-label="Hand colour 6" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #4f8ef7"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#e9573f" data-stroke="#b3301c" aria-label="Hand colour 7" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-black/20 shadow-sm transition hover:scale-110" style="background-color: #e9573f"></button>
+            <button type="button" data-hand-color-target="swatch" data-action="hand-color#choose" data-fill="#111111" data-stroke="#6b7280" aria-label="Hand colour 8" aria-pressed="false" class="h-8 w-8 shrink-0 rounded-full border border-neutral-800 shadow-sm transition hover:scale-110" style="background-color: #111111"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="mt-8 text-sm text-neutral-500">
+    New to the code? <a href="/help" class="text-sky-400 hover:text-sky-300">Learn the hand gestures</a>.
+  </p>
+</div>

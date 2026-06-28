@@ -1,0 +1,18 @@
+title: Talk to the Hand
+description: Practice and learn the indoor-skydiving hand code for windspeeds 1-99.
+lang: en
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - package.json
+  - package-lock.json
+  - node_modules
+  - tailwind.config.js
+  - src
+  - vendor/bundle

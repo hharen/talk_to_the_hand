@@ -1,0 +1,46 @@
+---
+layout: default
+title: Recognize mode
+description: Read the gesture and type the windspeed it represents.
+permalink: /recognize/
+---
+
+<div class="max-w-2xl mx-auto" data-controller="recognize-game">
+  <div class="flex items-start justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-semibold tracking-tight text-neutral-100">Recognize mode</h1>
+      <p class="mt-1 text-neutral-400">Read the gesture(s) and type the windspeed they represent.</p>
+    </div>
+  </div>
+
+  <div data-recognize-game-target="panel" class="hidden mt-8 rounded-2xl border border-white/10 bg-neutral-900/40 p-8">
+    <div data-recognize-game-target="prompt" class="flex items-center justify-center gap-5 min-h-48"></div>
+
+    <form data-action="recognize-game#submit" class="mt-8 flex items-center justify-center gap-3">
+      <input data-recognize-game-target="input" data-action="input->recognize-game#inputChanged" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2"
+             class="w-28 rounded-xl border border-white/10 bg-neutral-950 px-4 py-2 text-2xl text-center tabular-nums text-neutral-100 placeholder:text-neutral-600 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/30"
+             placeholder="?" autocomplete="off">
+      <button type="button" data-recognize-game-target="actionButton" data-action="recognize-game#revealOrNext"
+              class="rounded-xl border border-white/10 bg-neutral-900/50 px-4 py-2 text-sm font-medium text-neutral-400 transition hover:bg-neutral-800">Reveal</button>
+    </form>
+
+    <div data-recognize-game-target="feedback" class="mt-5 text-center text-lg font-medium min-h-7"></div>
+  </div>
+
+  {%- comment %} Hidden, build-time-rendered gesture templates cloned by the controller. {% endcomment -%}
+  <div data-recognize-game-target="templates" class="hidden">
+    {% for t in (1..9) %}
+      <div data-gesture-key="tens-{{ t | times: 10 }}">{% hand_sign tens t size:150 %}</div>
+    {% endfor %}
+    {% for o in (1..9) %}
+      <div data-gesture-key="ones-{{ o }}">{% hand_sign ones o size:150 %}</div>
+    {% endfor %}
+    {% for n in (55..95) %}{% if n == 55 or n == 65 or n == 75 or n == 85 or n == 95 %}
+      <div data-gesture-key="combined-{{ n }}">{% hand_sign combined n size:150 %}</div>
+    {% endif %}{% endfor %}
+  </div>
+
+  <p class="mt-8 text-sm text-neutral-500">
+    Need a refresher? <a href="/help" class="text-sky-400 hover:text-sky-300">View the gesture guide</a>.
+  </p>
+</div>
